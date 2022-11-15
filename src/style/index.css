@@ -1,0 +1,63 @@
+/* ./src/index.css */
+
+/* 類似於整體body版面基礎設定 */
+/* 概念有點像是 CSSreset 以及我的 Base 設定(基礎body套用全部的樣式) 如果我要增加像是包裹樣式 
+而 App.css 則是一個wrap範圍  */
+
+/* 網頁基本上都會使用 CSS reset，消除跨瀏覽器的不一致性，有寫過網頁一段時間都不陌生，而 Tailwind 有提供一組基底樣式，稱為 Preflight，基本上就是採用 modern-normalize 啦！
+
+以前一開始學網頁是用 CSS reset ，後來就都用 Nomalize 了
+https://ithelp.ithome.com.tw/articles/10269123?sc=iThelpR 增加 Base 樣式 */
+
+/* [Tailwind CSS] 自訂元件(component) */
+/* https://tools.wingzero.tw/article/sn/936 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+}
+@layer components {
+}
+@layer utilities {
+}
+
+/* 如果專案的需求是改變 h1 的預設大小，可以把要改變的內容直接寫在 這隻檔案內，然後使用 @layer base，再把要更改的屬性與值寫在裡面 */
+
+/* 我使用 @layer 圖層的語法，把 base 的 h1 樣式改掉，並且使用 @apply 允許修改整個 h1 的內容， 
+@apply 有點像是把想要的樣式自己拼湊，組一個模組 去新增或改基本 */
+
+/* h1的 基本樣式就變成我設定的了 */
+@layer base {
+  h1 {
+    @apply my-5 text-6xl text-red-500;
+  }
+}
+
+/* 若不想像這樣 一個按鈕後面接了20幾個class 看起來煩躁  <button class="py-2 px-4 bg-blue-500 text-white.......">
+Tailwind CSS 有提供我們自訂 class name 把內建樣式組合方法，像如果我們最後想要用一個 class name 來設定樣式 */
+
+/* 這樣我就可以寫這個className使用 或是資料夾下css自定 */
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-blue-500 py-2 px-4 font-semibold text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+}
+
+
+
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
