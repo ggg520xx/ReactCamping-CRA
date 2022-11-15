@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ReactCamping-CRA/static/css/main.073c9b0a.css",
-    "main.js": "/ReactCamping-CRA/static/js/main.175a969d.js",
+    "main.css": "/ReactCamping-CRA/static/css/main.ccfc9f76.css",
+    "main.js": "/ReactCamping-CRA/static/js/main.b986bfff.js",
     "static/js/787.5480e000.chunk.js": "/ReactCamping-CRA/static/js/787.5480e000.chunk.js",
     "static/media/logo.svg": "/ReactCamping-CRA/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ReactCamping-CRA/index.html",
-    "main.073c9b0a.css.map": "/ReactCamping-CRA/static/css/main.073c9b0a.css.map",
-    "main.175a969d.js.map": "/ReactCamping-CRA/static/js/main.175a969d.js.map",
+    "main.ccfc9f76.css.map": "/ReactCamping-CRA/static/css/main.ccfc9f76.css.map",
+    "main.b986bfff.js.map": "/ReactCamping-CRA/static/js/main.b986bfff.js.map",
     "787.5480e000.chunk.js.map": "/ReactCamping-CRA/static/js/787.5480e000.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.175a969d.js"
+    "static/css/main.ccfc9f76.css",
+    "static/js/main.b986bfff.js"
   ]
 }
