@@ -1,3 +1,7 @@
+// npx tailwindcss init--full
+// 產生 完整預設設定 參考的指令
+// 看是要 從完整展開的做修改我要使用的 還是用 乾淨的去覆蓋 看我設定檔想怎麼用
+
 // https://blog.hiskio.com/vue3-react-tailwind-css/
 // 從零開始配置 Vue3 / React + Tailwind CSS
 // 這個不錯
@@ -23,17 +27,42 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  mode: "jit",
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],   // 會影響的頁面  (purge已棄用改為content 用purge會有警告)
+  // mode: "jit", Tailwind 3.0 官方文件表示已經不需要設定mode:'jit'
+  content: ['./src/**/*.{js,jsx,ts,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
+  // 編譯監測的壓縮瘦身 偵測 有沒有用到哪些class名稱 有用到就保留其來 沒用到就刪除 
+  // 會影響的頁面(purge已重命名改為content 用purge會有警告)
+
   darkMode: 'media', // or 'media' or 'class' 原本是 false
-  theme: {      // 基本上預設就很夠用了
-    extend: {},
+
+  theme: {
+
+    // 加入我自己所想自訂的(客製化) --- 基本上預設就很夠用了 
+    // index.css 內則是  更改基本樣式 及 包裝化樣式 而非客製化
+
+    // 可以在下拉提示找到自定義 文字背景邊線 都會有自訂色碼樣式管理
+    // 可以自己設計斷點 或 比較語意化的(自己客製想要的自訂 css class)
+    extend: {
+      colors: {
+        main_color: '#38470B',
+        sub_color: '#949C7C',
+        p_color: '#8DA291',
+        my_yellow: '#FFE180',
+        
+        // primary: '#b22222',
+        // secondary: '#949C7C'
+      },
+      // fontFamily: {
+      //   'sans': ['Noto Sans TC', 'sans-serif']
+      // },
+    },
+
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],   // 原則上有些插件，某些原因沒有收入至框架內，要使用再使用，不然也很夠用 https://tailwindcss.com/docs/plugins 官方文件
+  plugins: [
+    require('flowbite/plugin')
+  ]
 }
+// 原則上有些插件，某些原因沒有收入至框架內，要使用再使用，不然也很夠用
+// https://tailwindcss.com/docs/plugins 官方文件
 
   // 上面其中一個指令會生成 postcss.config.js 這個檔案是用來載入 postcss 插件用的
   // 這邊預設會載入 tailwindcss 與 autoprefixer 想要載入其他的插件或設定才會用到這個檔案
@@ -53,8 +82,6 @@ module.exports = {
   // prefix 會將撰寫的 class 加上自定義的前綴，可防止樣式的衝突，在撰寫插件時常會使用到該功能
 
 
-
-
   // @apply
   // 是目前比較常用的功能，可以組合多個 CSS 在一個 class 內，類似 funciton 把東西都包好，方便使用。(可參考 alex寫的包裝custom css)
 
@@ -65,3 +92,12 @@ module.exports = {
 //   .commentinnerbg {
 //   @apply flex flex - col justify - center items - center bg - white w - 20 h - 20 shadow - md
 // }
+
+// ------------------------------------
+
+// 若是要組合使用 我也可以使用 style - components
+
+// 更改原預設 提供的 class 樣式 (index.css)
+// 使用預設class樣式 合併多個成為組成的 class (index.css)
+
+// 增加自訂可使用的預設 class 樣式 可以設定自訂顏色(tailwind.config)

@@ -1,8 +1,10 @@
 /* 一個body下的wrap大元件設定 */
-
 .App {
   text-align: center;
 }
+/* --------- 以上用於全頁面使用 App class 作為wrapper  ------------ */
+
+/* ------------------- 以下僅用於demo頁面  ---------------------- */
 
 .App-logo {
   height: 40vmin;

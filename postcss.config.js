@@ -5,6 +5,9 @@ module.exports = {
   },
 }
 
+// 處理tailwind 做轉換 及 auto加入前綴處理相容
+
+// 我們使用 tailwindcss 和 @tailwind 語法時 我們同時也會使用到了 postcss 所以一樣要裝 postcss 這兩個是要一同安裝的
 // 安裝 PostCSS 去處理轉換 CSS 樣式
 
 

@@ -9,6 +9,9 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from './components/Home/Home'
 import Layout from './components/Layout/Layout'
+
+
+import Demo from './components/demo/demo'
 import NotFound from './components/NotFound'
 // import 就能使用 那個函式頁面(擁有這個函式功能) 來自於這裡(順利吃到外部元件) 
 // 同時該頁面也要記得 export 並給予路徑和設定該路徑顯示元件
@@ -16,13 +19,15 @@ import NotFound from './components/NotFound'
 
 function App() {
   return (
-    <div className="App">
-      <div className="header_public">App這邊可以設計一處共用全路由共用的表頭表尾 或是純粹用Layout階層去設計也可以</div>
+    <div className="App wrapper">
+      {/* <div className="header_public">App這邊可以設計一處共用全路由共用的表頭表尾 或是純粹用Layout階層去設計也可以</div> */}
       <Routes>
         <Route path='/' element={<Layout />} >
           <Route index element={<Home />} />
+
+
+          <Route path='demo' element={<Demo />} />
           <Route path="*" element={<NotFound />} />
-          {/* <Route path="about" element={<About />} /> */}
         </Route>
 
         {/* 如果要設計後台的話 */}
@@ -35,7 +40,7 @@ function App() {
         {/* </Route> */}
       </Routes>
 
-      <div className="footer_public">App這邊可以設計一處共用全路由共用的表頭表尾 或是純粹用Layout階層去設計也可以</div>
+      {/* <div className="footer_public">App這邊可以設計一處共用全路由共用的表頭表尾 或是純粹用Layout階層去設計也可以</div> */}
     </div>
   );
 }
